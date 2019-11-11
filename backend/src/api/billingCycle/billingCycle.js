@@ -25,7 +25,7 @@ const debtSchema = new mongoose.Schema({
   },
   status: {
     type: String,
-    required: false,
+    required: true,
     uppercase: true,
     enum: ["PAGO", "PENDENTE", "AGENDADO"]
   }

@@ -1,5 +1,4 @@
 const express = require("express");
-const auth = require("./auth");
 
 module.exports = function(server) {
   //URL base
@@ -7,4 +6,6 @@ module.exports = function(server) {
   server.use("/api", router);
 
   //Rotas de Ciclo de Pagamento
+  const BillingCycle = require("../api/billingCycle/billingCycleService");
+  BillingCycle.register(router, "/billingCycles");
 };
