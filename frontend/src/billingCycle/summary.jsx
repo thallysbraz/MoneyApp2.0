@@ -14,21 +14,21 @@ export default ({ credit, debt }) => (
           color="green"
           icon="bank"
           value={`R$ ${credit}`}
-          text="Total de Créditos"
+          text="Soma de Créditos"
         />
         <ValueBox
           cols="12 4"
           color="red"
           icon="credit-card"
           value={`R$ ${debt}`}
-          text="Total de Débitos"
+          text="Soma de Débitos"
         />
         <ValueBox
           cols="12 4"
           color="blue"
           icon="money"
           value={`R$ ${credit - debt}`}
-          text="Valor Consolidado"
+          text="Crédito - Débito"
         />
       </Row>
     </fieldset>
