@@ -5,6 +5,7 @@ import { connect } from "react-redux";
 
 import Grid from "../common/layout/grid";
 import Input from "../common/form/input";
+import If from "../common/operator/if";
 
 class ItemList extends Component {
   add(index, item = {}) {
@@ -15,7 +16,7 @@ class ItemList extends Component {
 
   remove(index) {
     if (!this.props.readOnly && this.props.list.length > 1) {
-      this.props.arrayRemove("billingCycleForm", "credits", index);
+      this.props.arrayRemove("billingCycleForm", this.props.field, index);
     }
   }
 
@@ -39,6 +40,16 @@ class ItemList extends Component {
             readOnly={this.props.readOnly}
           />
         </td>
+        <If test={this.props.showStatus}>
+          <td>
+            <Field
+              name={`${this.props.field}[${index}].status`}
+              component={Input}
+              placeholder="Informe o status"
+              readOnly={this.props.readOnly}
+            />
+          </td>
+        </If>
         <td>
           <button
             type="button"
@@ -76,6 +87,9 @@ class ItemList extends Component {
               <tr>
                 <th>Nome</th>
                 <th>Valor</th>
+                <If test={this.props.showStatus}>
+                  <th>Status</th>
+                </If>
                 <th className="table-actions">Ações</th>
               </tr>
             </thead>
