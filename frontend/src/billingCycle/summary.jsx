@@ -14,14 +14,14 @@ export default ({ credit, debt }) => (
           color="green"
           icon="bank"
           value={`R$ ${credit}`}
-          text="Soma de Créditos"
+          text="Total de Créditos"
         />
         <ValueBox
           cols="12 4"
           color="red"
           icon="credit-card"
           value={`R$ ${debt}`}
-          text="Soma de Débitos"
+          text="Total de Débitos"
         />
         <ValueBox
           cols="12 4"
